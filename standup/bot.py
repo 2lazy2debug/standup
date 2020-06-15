@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from typing import List, Optional
 
 import discord
+from discord import MessageType
 from discord.ext import commands
 from standup.post import message_is_formatted
 from standup.persist import Post, Room, RoomRole
@@ -57,7 +58,8 @@ async def on_message(msg: discord.Message) -> None:
             "```"
         )
 
-        await msg.author.send(dm_help)
+        if msg.type is not MessageType.pins_add:
+            await msg.author.send(dm_help)
         return
 
     new_post = Post.create(
