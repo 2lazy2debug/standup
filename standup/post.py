@@ -4,9 +4,9 @@ import re
 
 
 STANDUP_REGEX = (
-    r"^Yesterday I:[\s\S]+\n"
-    r"Today I will:[\s\S]+\n"
-    r"Potential hard problems:[\s\S]+$"
+    r"^\*\*Yesterday I:\*\*[\s\S]+\n"
+    r"\*\*Today I will:\*\*[\s\S]+\n"
+    r"\*\*Potential hard problems:\*\*[\s\S]+$"
 )
 
 
