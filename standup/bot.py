@@ -52,9 +52,9 @@ async def on_message(msg: discord.Message) -> None:
             "Your posted standup is incorrectly formatted:\n"
             f"```{msg.content}```"
             "Please format your standup correctly, here is a template example: ```\n"
-            "Yesterday I: [...]\n"
-            "Today I will: [...]\n"
-            "Potential hard problems: [...]\n"
+            "\*\*Yesterday I:\*\* [...]\n"
+            "\*\*Today I will:\*\* [...]\n"
+            "\*\*Potential hard problems:\*\* [...]\n"
             "```"
         )
 
