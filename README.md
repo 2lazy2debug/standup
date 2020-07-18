@@ -7,6 +7,10 @@ Discord bot for conducting standups in "The Programming Hangout".
 
 ## Installation
 
+These instructions will get you a very basic standup setup ready within seconds for testing, be mindful that
+without any volume mounts or additional options in the dockerless setup that data won't persist between restarts.
+If this is important to you, please read the other subsections.
+
 ```bash
 # Docker
 docker build -t standup .
@@ -14,7 +18,7 @@ docker run --name standup --env STANDUP_BOT_TOKEN="MY_TOKEN" standup
 
 # Dockerless
 poetry install
-standup "MY_TOKEN"
+poetry run standup "MY_TOKEN"
 ```
 
 ### Shell Script Configuration
@@ -48,7 +52,7 @@ We can use `standup --help` to check the possible configuration options for the
 `standup` script. Among these include database customization.
 
 ```bash
-standup --database "./data/custom_database.db" "MY_TOKEN"
+poetry run standup --database "./data/custom_database.db" "MY_TOKEN"
 ```
 
 ## User Guide
